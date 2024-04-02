@@ -19,11 +19,14 @@ jobs:
       uses: actions/cache@v3
       with:
         path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirement.txt') }}
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
     - name: Install pip dependencies
       run: |
         pip install --upgrade pip
         pip install -r requirements.txt
+    - name: Clone BACK repository
+      run: |
+        git clone https://github.com/IFCE-LASIC/lasic-ches-back.git
     - name: Run Tests
       run: python -m robot --outputdir results testcases/functional_tests
     - name: Run Tests and creat report
