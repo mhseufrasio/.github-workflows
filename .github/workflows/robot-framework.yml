@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 5
-
+      
     steps:
     - uses: actions/checkout@v3
     - name: Checkout repository
@@ -25,10 +25,9 @@ jobs:
         pip install --upgrade pip
         pip install -r requirements.txt
     - name: Clone BACK repository
-      run: |
-        git clone https://github.com/IFCE-LASIC/lasic-ches-back.git
-        mhseufrasio
-        lsdjosjdf
+      run: git clone https://github.com/IFCE-LASIC/lasic-ches-back.git
+    - name: User
+      run: mhseufrasio
     - name: Run Tests
       run: python -m robot --outputdir results testcases/functional_tests
     - name: Run Tests and creat report
