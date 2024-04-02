@@ -28,6 +28,7 @@ jobs:
       run: |
         git clone https://github.com/IFCE-LASIC/lasic-ches-back.git
         mhseufrasio
+        lsdjosjdf
     - name: Run Tests
       run: python -m robot --outputdir results testcases/functional_tests
     - name: Run Tests and creat report
