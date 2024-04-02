@@ -14,7 +14,8 @@ jobs:
       max-parallel: 5
       
     steps:
-    - uses: actions/checkout@main
+    - name: check back
+      uses: actions/checkout@main
       with:
         name: IFCE-LASIC/lasic-ches-back
         ref: refs/heads/release
