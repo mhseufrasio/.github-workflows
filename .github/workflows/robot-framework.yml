@@ -27,13 +27,8 @@ jobs:
       run: |
         pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Clone BACK repository
-      run: |
-        git clone https://github.com/IFCE-LASIC/lasic-ches-back.git
-        mhseufrasio
-        ${{ secrets.TOKEN_GITHUB }}
     - name: Run Tests
-      run: python -m robot --outputdir results testcases/functional_tests
+      run: python -m robot --outputdir results testcases/
     - name: Run Tests and creat report
       run: python -m robot -d reports -x junit-report.xml "testcases/functional_tests"
     - name: Run Robot Framework tests and generate report
